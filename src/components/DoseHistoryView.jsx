@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
-import { CheckCircle2, Clock, AlertTriangle, ShieldCheck, Search, Filter, Check, Cpu } from "lucide-react";
+import { CheckCircle2, Clock, AlertTriangle, ShieldCheck, Search, Filter, Check, Cpu, Mic } from "lucide-react";
 
-export default function DoseHistoryView({ history, onTakeDose, onDispenseModalOpen }) {
+export default function DoseHistoryView({ history, onTakeDose, onDispenseModalOpen, onOpenSwallowModal }) {
   const [filterStatus, setFilterStatus] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [dateFilter, setDateFilter] = useState("all");
@@ -234,6 +234,17 @@ export default function DoseHistoryView({ history, onTakeDose, onDispenseModalOp
                             >
                               <Check size={13} /> Take
                             </button>
+                            {onOpenSwallowModal && (
+                              <button
+                                type="button"
+                                className="btn-action-secondary"
+                                onClick={() => onOpenSwallowModal(item)}
+                                title="Acoustic Swallowing Ingestion Validator"
+                                style={{ color: "#0284c7" }}
+                              >
+                                <Mic size={13} /> Acoustic
+                              </button>
+                            )}
                           </div>
                         )}
                         {item.status === "missed" && (

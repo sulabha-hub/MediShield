@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Wifi, Thermometer, Droplets, RefreshCw, Cpu, ShieldCheck, AlertTriangle, Sliders, Volume2 } from "lucide-react";
+import { Wifi, Thermometer, Droplets, RefreshCw, Cpu, ShieldCheck, AlertTriangle, Sliders, Volume2, Sparkles, Activity } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
 export default function DeviceStatusWidget({
@@ -12,6 +12,8 @@ export default function DeviceStatusWidget({
   onSimulateHumidityChange,
   onTestDispense,
   onTestBuzzer,
+  onOpenHabituationModal,
+  onNavigateTab,
   medications = [],
   telemetryData = []
 }) {
@@ -184,6 +186,26 @@ export default function DeviceStatusWidget({
               {buzzerActive ? "Beeping" : "Sound"}
             </button>
           </div>
+
+          {onOpenHabituationModal && (
+            <div className="action-control-card">
+              <div className="action-icon" style={{ background: "#ecfdf5", color: "#059669" }}>
+                <Sparkles size={18} />
+              </div>
+              <div className="action-info">
+                <b>Anti-Habituation</b>
+                <small>Shepard-Risset sound engine</small>
+              </div>
+              <button
+                type="button"
+                className="btn-tb-action"
+                style={{ background: "#ecfdf5", color: "#059669", border: "1px solid #a7f3d0" }}
+                onClick={onOpenHabituationModal}
+              >
+                Synthesize
+              </button>
+            </div>
+          )}
 
           <div className="action-control-card">
             <div className="action-icon temp-color">

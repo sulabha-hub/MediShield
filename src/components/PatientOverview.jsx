@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Clock, ShieldCheck, Thermometer, Droplets, CheckCircle2, AlertTriangle, ChevronRight, Cpu, Pill, Phone } from "lucide-react";
+import { Clock, ShieldCheck, Thermometer, Droplets, CheckCircle2, AlertTriangle, ChevronRight, Cpu, Pill, Phone, Mic, Activity, FileCheck2, Sparkles } from "lucide-react";
 
 export default function PatientOverview({
   patient,
@@ -9,7 +9,8 @@ export default function PatientOverview({
   humidity,
   onNavigateTab,
   onOpenDispense,
-  onTakeDose
+  onTakeDose,
+  onOpenSwallowModal
 }) {
   const nextDose = useMemo(() => {
     const pendingDoses = history.filter(h => h.status === "pending");
@@ -83,6 +84,27 @@ export default function PatientOverview({
                 >
                   <CheckCircle2 size={17} /> Mark Taken
                 </button>
+                {onOpenSwallowModal && (
+                  <button
+                    type="button"
+                    className="btn-hero-swallow"
+                    onClick={() => onOpenSwallowModal(nextDose)}
+                    title="Acoustic Swallowing Ingestion Validator"
+                    style={{
+                      background: "linear-gradient(135deg, #0ea5e9, #0284c7)",
+                      color: "#ffffff",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "7px",
+                      padding: "10px 18px",
+                      borderRadius: "10px",
+                      fontSize: "13px",
+                      fontWeight: "700"
+                    }}
+                  >
+                    <Mic size={16} /> Verify Ingestion
+                  </button>
+                )}
               </>
             )}
             <button
@@ -176,6 +198,73 @@ export default function PatientOverview({
           <div className="p-stat-sub">
             {medications.filter(m => m.paused).length} paused
           </div>
+        </div>
+      </div>
+
+      {/* Frontier Novelty Features Cards */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "16px", margin: "4px 0 10px 0" }}>
+        <div
+          onClick={() => onNavigateTab("Bio-Intelligence")}
+          style={{
+            background: "linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)",
+            border: "1px solid #bae6fd",
+            borderRadius: "var(--radius-lg)",
+            padding: "20px 24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            cursor: "pointer",
+            boxShadow: "var(--shadow-sm)",
+            transition: "all 0.2s ease"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#e0f2fe", color: "#0284c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Activity size={22} />
+            </div>
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
+                <span style={{ fontSize: "11px", fontWeight: "700", color: "#0284c7", background: "#e0f2fe", padding: "2px 8px", borderRadius: "9999px" }}>NOVELTY ENGINE</span>
+                <b style={{ fontSize: "15px", color: "var(--text-main)" }}>Bio-Intelligence Simulator</b>
+              </div>
+              <p style={{ fontSize: "12px", color: "var(--text-secondary)", margin: 0 }}>
+                In-Silico PK/PD Plasma Curves & Arrhenius Chemical Potency Twin
+              </p>
+            </div>
+          </div>
+          <ChevronRight size={18} style={{ color: "#0284c7" }} />
+        </div>
+
+        <div
+          onClick={() => onNavigateTab("Trust & Audit")}
+          style={{
+            background: "linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%)",
+            border: "1px solid #a7f3d0",
+            borderRadius: "var(--radius-lg)",
+            padding: "20px 24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            cursor: "pointer",
+            boxShadow: "var(--shadow-sm)",
+            transition: "all 0.2s ease"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <div style={{ width: "44px", height: "44px", borderRadius: "12px", background: "#dcfce7", color: "#059669", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <FileCheck2 size={22} />
+            </div>
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
+                <span style={{ fontSize: "11px", fontWeight: "700", color: "#059669", background: "#dcfce7", padding: "2px 8px", borderRadius: "9999px" }}>AIR-GAPPED TRUST</span>
+                <b style={{ fontSize: "15px", color: "var(--text-main)" }}>Optical Fountain & Escrow</b>
+              </div>
+              <p style={{ fontSize: "12px", color: "var(--text-secondary)", margin: 0 }}>
+                Animated QR video fountain & ZK-SNARK privacy credentials
+              </p>
+            </div>
+          </div>
+          <ChevronRight size={18} style={{ color: "#059669" }} />
         </div>
       </div>
 
