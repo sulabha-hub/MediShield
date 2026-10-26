@@ -16,12 +16,12 @@
 ### 1.2 Contributors — list every student member who contributed ideas to the work.
 *(Work divided equivalently across all 4 contributors)*
 
-| # | Full name | Reg. No. | Programme, year or designation | School / Department and campus | Nationality | Email | Main contribution |
-|---|---|---|---|---|---|---|---|
-| **1** | **Rakshitha Rao** | ENG-2026-MED01 | B.Tech Embedded Systems, 4th Year | Dept. of Electronics & Communication Engineering | Indian | rakshitha.rao@medishield.org | **Hardware & Power Distribution Lead**: Circuit schematic wiring, 5V/3.3V rail regulation, SG90 servo lid latch actuation, active buzzer driver, and 3D enclosure CAD integration. |
-| **2** | **Sulabha T N** | ENG-2026-MED02 | B.Tech Computer Science / IoT, 4th Year | Dept. of Computer Science & Engineering | Indian | sulabha.tn@medishield.org | **Firmware & Sensing Control Lead**: RC522 RFID SPI driver with patient card authentication, DS1307 RTC I2C bus integration with CR2032 backup, DHT22 1-wire protocol, dose state machine, and LittleFS flash management. |
-| **3** | **Aditya Kulkarni** | ENG-2026-MED03 | B.Tech Information Technology, 4th Year | Dept. of Information Science & Engineering | Indian | aditya.kulkarni@medishield.org | **Full-Stack IoT & Optical Communications Lead**: ESPAsyncWebServer RESTful endpoints, Wi-Fi AP/Station modes, mDNS, embedded app (`webapp.h`), React 18 client-side UI, ISO/IEC 18004 QR generator, and Luby Transform fountain stream. |
-| **4** | **Neha Varma** | ENG-2026-MED04 | B.Tech Biomedical Engineering, 4th Year | Dept. of Biomedical Engineering & Health Informatics | Indian | neha.varma@medishield.org | **Clinical Bio-Intelligence & Acoustics Lead**: In-silico Bateman PK/PD plasma simulator, missed-dose Catch-Up Advisor, ASAP-Arrhenius chemical potency degradation twin, Web Audio API FFT epiglottic transit acoustic detector, and Shepard-Risset anti-habituation engine. |
+| # | Student Member & Reg. No. | Programme & Department | Contact Email & Role | Key Technical Contribution & Deliverables |
+|---|---|---|---|---|
+| **1** | **Rakshitha Rao**<br>Reg: ENG-2026-MED01<br>Nationality: Indian | B.Tech Embedded Systems (Year 4)<br>Dept. of Electronics & Communication Engineering | rakshitha.rao@medishield.org<br>**Hardware & Power Lead** | Circuit schematic wiring, 5V/3.3V rail regulation, 470 µF decoupling capacitor to prevent SG90 servo brownout reboot, active buzzer driver, and 3D enclosure CAD integration. |
+| **2** | **Sulabha T N**<br>Reg: ENG-2026-MED02<br>Nationality: Indian | B.Tech Computer Science / IoT (Year 4)<br>Dept. of Computer Science & Engineering | sulabha.tn@medishield.org<br>**Firmware & Sensing Lead** | RC522 RFID SPI driver with patient card UID authentication, DS1307 RTC I2C bus integration with CR2032 coin cell backup, DHT22 1-wire timing, finite state machine, and LittleFS flash management. |
+| **3** | **Aditya Kulkarni**<br>Reg: ENG-2026-MED03<br>Nationality: Indian | B.Tech Information Technology (Year 4)<br>Dept. of Information Science & Engineering | aditya.kulkarni@medishield.org<br>**Full-Stack IoT & Comms Lead** | ESPAsyncWebServer RESTful endpoints (/api/status, /api/dispense, /api/logs), Soft-AP & Station modes, React 18 client SPA, ISO/IEC 18004 QR generation, and Luby Transform fountain video streaming. |
+| **4** | **Neha Varma**<br>Reg: ENG-2026-MED04<br>Nationality: Indian | B.Tech Biomedical Engineering (Year 4)<br>Dept. of Biomedical Engineering & Health Informatics | neha.varma@medishield.org<br>**Clinical Bio-Intelligence Lead** | In-silico Bateman two-compartment PK/PD solver, missed-dose Catch-Up Advisor, ASAP-Arrhenius chemical potency degradation digital twin, Web Audio API FFT acoustic ingestion detector, and Shepard-Risset alarm. |
 
 ---
 
@@ -375,8 +375,8 @@ $$\Large A_n(t) = \exp\left( -\frac{\left(\ln(f_n(t)) - \ln(f_{\text{mid}})\righ
 ## File Deliverables & Downloads
 
 - **Downloadable Microsoft Word Document (.docx)**:
-  - [Project_Technical_Details_MediShield.docx](file:///c:/Users/Sulabha%20T%20N/Downloads/medishield-frontend/Project_Technical_Details_MediShield.docx) *(1.77 MB)*
-  - Fully justified paragraphs, styled table headers (`#0284c7`), readable formula callout cards, 4 contributors, and all 9 technical figures embedded.
+  - [Project_Technical_Details_MediShield.docx](file:///c:/Users/Sulabha%20T%20N/Downloads/medishield-frontend/Project_Technical_Details_MediShield.docx) *(3.36 MB)*
+  - Strictly left-aligned paragraphs (no awkward word-stretching or collapsed margins), robust non-collapsing tables with fixed column widths, shaded mathematical formula cards with worked sample calculations, 4 equal contributors, and all 18 vector engineering figures (Appendix A: Labelled, Appendix B: Unlabelled) embedded.
 - **Labelled & Unlabelled Figures Directory**:
   - `figures/fig1_labelled.png` & `fig1_unlabelled.png`
   - `figures/fig2_labelled.png` & `fig2_unlabelled.png`
